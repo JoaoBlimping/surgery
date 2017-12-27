@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://pics/1.png" type="Texture" id=1]
+[ext_resource path="res://pics/2.png" type="Texture" id=2]
+[ext_resource path="res://pics/face.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="back" type="Sprite"]
+
+[node name="comic" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="comic"]
+
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+centered = false
+
+[node name="face" type="Sprite" parent="comic"]
+
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Panel" type="Panel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 400.0
+margin/right = 400.0
+margin/bottom = 600.0
+
+[node name="Label" type="Label" parent="Panel"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 100.0
+text = "Hello there my name is bongo and I am going to kill you right here and now so watch out!!"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
